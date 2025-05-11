@@ -1,6 +1,4 @@
-# Pizza Clicker
-Pizza Clicker v1.3 Intructions (PLEASE READ THIS IF YOU DON'T KNOW WHAT YOU'RE DOING OR HOW TO LAUNCH)
-
+# Pizza Clicker Intructions
 How to play:
 
 click the screen to make pizzas
