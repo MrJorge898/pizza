@@ -1,4 +1,5 @@
 # Pizza Clicker Intructions
+(Note I am very new at programming and this isn't even done)
 How to play:
 
 click the screen to make pizzas
