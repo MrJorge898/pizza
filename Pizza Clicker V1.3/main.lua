@@ -40,7 +40,7 @@ function love.load()
 
     ico = love.image.newImageData("images/icon.png")
     ok = love.window.setIcon(ico)
-    love.window.setTitle("Pizza Clicker v1.3")
+    love.window.setTitle("Pizza Clicker")
     love.window.setMode(300, 300, {resizable=false, vsync=true, minwidth=400, minheight=300})
 end
 
@@ -91,9 +91,7 @@ function love.update(dt)
 
     if music < 0 then
         music = 0
-    end
-
-    if music > 4 then
+    elseif music > 4 then
         music = 4
     end
 end
