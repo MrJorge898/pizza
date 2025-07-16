@@ -28,6 +28,7 @@ function love.load()
     sounds.blip = love.audio.newSource("sounds/blip.wav", "static")
     sounds.bong = love.audio.newSource("sounds/bong.wav", "static")
     sounds.ding = love.audio.newSource("sounds/ding.wav", "static")
+    
     sounds.star:setLooping(true)
     sounds.studio:setLooping(true)
     sounds.battery:setLooping(true)
@@ -36,7 +37,8 @@ function love.load()
     sounds.star:play()
 
     menu = 1
-    sound = 1
+    sound = true
+    songs = true
 
     ico = love.image.newImageData("images/icon.png")
     ok = love.window.setIcon(ico)
@@ -105,18 +107,26 @@ function love.draw()
         love.graphics.draw(pizzai, 100, 100, nil, 0.2, 0.2)
 
         love.graphics.setColor(0, 0, 1)
+        
         love.graphics.print(pizza, 60, 0)
         love.graphics.print("pizza:", 0, 0)
+        
         love.graphics.print("pps:", 0, 25)
         love.graphics.print(pps, 45, 25)
+        
         love.graphics.print("ppc:", 0, 50)
         love.graphics.print(ppc, 45, 50)
+        
         love.graphics.setFont(font2)
+        
         love.graphics.print("Cost of next pps upgrade: ", 0, 250)
         love.graphics.print("Cost of next ppc upgrade:", 0, 275)
-        love.graphics.setFont(font)
+        
+        love.graphics.setFont(font
+        
         love.graphics.print(ppsc, 210, 250)
         love.graphics.print(ppcc, 215, 275)
+            
         love.graphics.setColor(255, 255, 255)
 
         if pps == 24 then
@@ -167,19 +177,19 @@ function love.draw()
         love.graphics.setColor(0, 0, 1)
         love.graphics.print("Options", 150, 0)
         love.graphics.print("Sounds:", 0, 50)
-        love.graphics.print(sound, 85, 50)
-        love.graphics.print("1 = true 2 = false", 0, 250)
+        love.graphics.print("true", 85, 50)
+        love.graphics.print("up key for sound, down key for music", 0, 250)
         love.graphics.setColor(255, 255, 255)
     end
 end
 
 function love.mousepressed( x, y, button, istouch, presses )
     if button == 1 then
-        if sound == 1 then
+        if sound == true then
             sounds.bong:stop()
         end
         pizza = pizza + ppc
-        if sound == 1 then
+        if sound == true then
             sounds.bong:play()
         end
     end
@@ -190,11 +200,11 @@ function love.keypressed( key, scancode, isrepeat )
         if pizza >= ppcc then
             pizza = pizza - ppcc
             ppcc = ppcc + 150
-            if sound == 1 then
+            if sound == true then
                 sounds.ding:stop()
             end
             ppc = ppc + 1
-            if sound == 1 then
+            if sound == true then
                 sounds.ding:play()
             end
         end
@@ -203,11 +213,11 @@ function love.keypressed( key, scancode, isrepeat )
         if pizza >= ppsc then
             pizza = pizza - ppsc
             ppsc = ppsc + 25
-            if sound == 1 then
+            if sound == true then
                 sounds.blip:stop()
             end
             pps = pps + 1
-            if sound == 1 then
+            if sound == true then
                 sounds.blip:play()
             end
         end
@@ -225,12 +235,19 @@ function love.keypressed( key, scancode, isrepeat )
 
     if menu == 2 then
         if key == "up" then
-            if sound == 1 then
-                sound = 2
+            if sound == true then
+                sound = false
             else
-                sound = 1
+                sound = true
             end
         end
+            if key == "down" then
+                    if songs == true then
+                        songs = false
+                    else
+                        songs = true
+                end
+            end
     end
 
     if key == "r" then
