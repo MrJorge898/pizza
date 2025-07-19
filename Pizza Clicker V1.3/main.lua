@@ -39,6 +39,8 @@ function love.load()
     menu = 1
     sound = true
     songs = true
+    songd = "true"
+    soundd = "true"
 
     ico = love.image.newImageData("images/icon.png")
     ok = love.window.setIcon(ico)
@@ -95,6 +97,16 @@ function love.update(dt)
         music = 0
     elseif music > 4 then
         music = 4
+    end
+    if sound == true then
+            soundd = "true"
+        else
+            soundd = "false
+    end
+    if songs == true then
+        songd = "true"
+    else
+        songd = "false"
     end
 end
 
@@ -177,7 +189,7 @@ function love.draw()
         love.graphics.setColor(0, 0, 1)
         love.graphics.print("Options", 150, 0)
         love.graphics.print("Sounds:", 0, 50)
-        love.graphics.print("true", 85, 50)
+        love.graphics.print(songd, 85, 50)
         love.graphics.print("up key for sound, down key for music", 0, 250)
         love.graphics.setColor(255, 255, 255)
     end
