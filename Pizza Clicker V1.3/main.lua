@@ -101,7 +101,7 @@ function love.update(dt)
     if sound == true then
             soundd = "true"
         else
-            soundd = "false
+            soundd = "false"
     end
     if songs == true then
         songd = "true"
