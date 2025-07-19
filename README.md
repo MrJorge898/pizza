@@ -13,9 +13,6 @@ R to go to options
 right arrow to scroll through songs
 left arrow to scroll through songs
 
-up arrow to change the volume to be higher
-down arrow to change the volume to be lower
-
 # HOW TO LAUNCH:
 
 WINDOWS:
