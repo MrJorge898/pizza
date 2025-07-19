@@ -122,7 +122,7 @@ function love.draw()
         love.graphics.print("Cost of next pps upgrade: ", 0, 250)
         love.graphics.print("Cost of next ppc upgrade:", 0, 275)
         
-        love.graphics.setFont(font
+        love.graphics.setFont(font)
         
         love.graphics.print(ppsc, 210, 250)
         love.graphics.print(ppcc, 215, 275)
