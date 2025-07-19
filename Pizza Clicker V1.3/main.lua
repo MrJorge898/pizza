@@ -98,16 +98,6 @@ function love.update(dt)
     elseif music > 4 then
         music = 4
     end
-    if sound == true then
-            soundd = "true"
-        else
-            soundd = "false"
-    end
-    if songs == true then
-        songd = "true"
-    else
-        songd = "false"
-    end
 end
 
 
@@ -189,7 +179,9 @@ function love.draw()
         love.graphics.setColor(0, 0, 1)
         love.graphics.print("Options", 150, 0)
         love.graphics.print("Sounds:", 0, 50)
-        love.graphics.print(songd, 85, 50)
+        love.graphics.print(soundd, 85, 50)
+        love.graphics.print("Music", 250, 0)
+        love.graphics.print(songd, 270, 0)
         love.graphics.print("up key for sound, down key for music", 0, 250)
         love.graphics.setColor(255, 255, 255)
     end
@@ -249,15 +241,19 @@ function love.keypressed( key, scancode, isrepeat )
         if key == "up" then
             if sound == true then
                 sound = false
+                soundd = "false"
             else
                 sound = true
+                soundd = "true"
             end
         end
             if key == "down" then
-                    if songs == true then
-                        songs = false
-                    else
-                        songs = true
+                if songs == true then
+                    songs = false
+                    songd = "false"
+                else
+                    songs = true
+                    songd = "true"
                 end
             end
     end
