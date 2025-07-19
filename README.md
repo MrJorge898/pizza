@@ -16,7 +16,7 @@ left arrow to scroll through songs
 up arrow to change the volume to be higher
 down arrow to change the volume to be lower
 
-HOW TO LAUNCH:
+# HOW TO LAUNCH:
 
 WINDOWS:
 1. Install love 2D (zip file) (https://love2d.org/)
